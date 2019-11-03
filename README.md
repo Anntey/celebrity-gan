@@ -1,6 +1,6 @@
 # Celebrity RaLSGAN
 
-__Data__: CelebA dataset[<sup>[1]</sup>](https://arxiv.org/abs/1807.00734) (202 599 images)
+__Data__: CelebA dataset [<sup>[1]</sup>](https://arxiv.org/abs/1807.00734) (202 599 images)
 
 __Task__: Create a baseline GAN 
 
