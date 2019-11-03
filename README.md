@@ -2,7 +2,7 @@
 
 __Data__: CelebA dataset[<sup> [1]</sup>](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) (202 599 images of celebrities)
 
-__Task__: generate fake images (64x64) of people
+__Task__: generate fake images (64x64) of people with a GAN (Generative Adversarial Network)
 
 __Evaluation__: subjective
 
