@@ -8,6 +8,6 @@ __Evaluation__: subjective
 
 __Solution__: RaLSGAN[<sup> [2]</sup>](https://arxiv.org/abs/1807.00734) (Relativistic Average Least Squares GAN)
 
-__Success__: Decent. The network had obvious problems with smiling (teeth) and clothing (particularly women's). The images were also quite heterogenous which a simple center crop can't resolve. Results could be improved by cropping just the faces with a detector or available metadata.
+__Success__: Decent. The network had obvious problems with smiling (teeth) and clothing (particularly women's). The images were also quite heterogenous which is a problem a simple center crop can't resolve. Results could be improved by cropping just the faces with a detector or available metadata.
 
 ![](example_output.png)
