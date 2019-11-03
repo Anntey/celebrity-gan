@@ -159,7 +159,7 @@ for epoch_i in range(num_epochs):
         netD.zero_grad()
         real_imgs = imgs.to(device)
         b_size = imgs.shape[0]
-        labels = torch.full((b_size, 1), 0.5, device = device) # array filled with 0.5
+        labels = torch.full((b_size, 1), 0.5, device = device) # label vector filled with 0.5
         out_real = netD(real_imgs)
         
         # ----------- Generate and classify fake images -----------
