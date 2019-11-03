@@ -8,6 +8,6 @@ __Evaluation__: subjective
 
 __Solution__: RaLSGAN[<sup> [2]</sup>](https://arxiv.org/abs/1807.00734) (Relativistic Average Least Squares GAN)
 
-__Success__: Decent. The network had obvious problems with smiling (teeth) and clothing (particularly women's). The images were also quite heterogenous which is a problem a simple center crop can't resolve. Results could be improved by cropping just the faces with a detector or available metadata. RaGANs are able to generate higher resolutions images (up to 256x256) but this would increase training time significantly. Also the training process wasn't optimized (learning rate, epochs and such).
+__Success__: Decent. The network had obvious problems with smiling (teeth) and clothing (particularly women's). The images were also quite heterogenous which is a problem a simple center crop can't resolve. Results could be improved by cropping just the faces with a detector or metadata available for the dataset. RaGANs are able to generate higher resolutions images (up to 256x256) but this would increase training time significantly. Also the training process wasn't optimized (learning rate, epochs and such).
 
 ![](example_output.png)
