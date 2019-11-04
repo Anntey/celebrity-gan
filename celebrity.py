@@ -24,12 +24,9 @@ warnings.filterwarnings("ignore")
 # Data generator #
 ##################
 
-device = torch.device("cuda:0")
-
 train_df = os.listdir("./input/train/") # list of img IDs
 
-class CelebrityDataset(Dataset):
-    
+class CelebrityDataset(Dataset):    
     def __init__(self, df, img_path, augmentations = None):    
         self.df = df
         self.img_path = img_path
@@ -55,11 +52,7 @@ augs = Compose([
         Normalize(mean = (0.5, 0.5, 0.5), std = (0.5, 0.5, 0.5))
 ])
                                  
-train_dataset = CelebrityDataset(
-        train_df,
-        "./input/train/",
-        augmentations = augs,
-)
+train_dataset = CelebrityDataset(train_df, "./input/train/", augmentations = augs)
 
 batch_size = 64
 
@@ -83,10 +76,11 @@ plt.tight_layout()
 # Specify model #
 #################
 
+device = torch.device("cuda:0")
+
 latent_dim = 128 # latent vector (i.e. size of generator input)
 
-class Generator(nn.Module):
-    
+class Generator(nn.Module):   
     def __init__(self, latent_dim = 128):
         super(Generator, self).__init__()        
         self.latent_dim = latent_dim
@@ -112,8 +106,7 @@ class Generator(nn.Module):
         x = tanh(self.convt6(x))
         return x
 
-class Discriminator(nn.Module):
-        
+class Discriminator(nn.Module):      
     def __init__(self):
         super(Discriminator, self).__init__()        
         self.conv1 = Conv2d(3, 32, 4, stride = 2, padding = 1, bias = False)
@@ -148,7 +141,7 @@ optimizerG = Adam(netG.parameters(), lr = 1e-3, betas = (0.5, 0.999))
 
 num_epochs = 60
 
-fixed_noise = torch.randn((1, latent_dim, 1, 1), device = device) # for visualization from same same in latent space
+fixed_noise = torch.randn((1, latent_dim, 1, 1), device = device) # for visualization from same point in latent space
 G_losses = []
 D_losses = []
 
