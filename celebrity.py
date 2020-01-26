@@ -117,7 +117,6 @@ class Discriminator(nn.Module):
         self.bn1 = BatchNorm2d(128)
         self.bn2 = BatchNorm2d(256)
 
-
     def forward(self, x):
         x = leaky_relu(self.conv1(x), 0.2, inplace = True)
         x = leaky_relu(self.conv2(x), 0.2, inplace = True)
